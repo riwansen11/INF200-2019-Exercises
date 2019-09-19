@@ -5,7 +5,7 @@ def letter_freq(txt):
     counter = [text.count(a) for a in text]
     return dict(zip(letters, counter))
     """
-    return dict([(i, text.count(i)) for i in txt])
+    return dict([(i, txt.count(i)) for i in txt])
 
 
 if __name__ == '__main__':
