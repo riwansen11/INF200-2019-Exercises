@@ -1,5 +1,17 @@
 def char_counts(textfilename):
-    pass
+    """
+    :param:
+    1st. Opens the file with the given filename using encoding utf-8.
+    2nd. Reads the entire file content into a single string.
+    3rd. Counts how often each character code (0–255) occurs in the string.
+    :return:
+    The result as a list or tuple, where result[i] gives the number of occurrences of character code i.
+    """
+    f = open(textfilename, "r")
+    content = f.read()
+
+    # result = [content.count(i) for i in content]
+    return [content.count(i) for i in content]
 
 
 if __name__ == '__main__':
