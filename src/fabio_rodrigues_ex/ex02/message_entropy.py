@@ -15,7 +15,7 @@ def entropy(message):
     n_i: number of occurrences of letter i (i is the UTF-8 code for the letter)
     p_i = n_i/N: frequency of the letter in the message
     :return:
-    The entropy calculated according to the equation H = - \sum_i p_i \log_2 p_i
+    The entropy calculated according to the equation H
     """
     num_letters = len(message)
     n_i = letter_freq(message)
