@@ -29,7 +29,7 @@ def game(max_attempts):
 def sum_dice():
     """Returns the sum of 2 rolled random dice
     """
-    return randint(1, 12)
+    return randint(1, 6) + randint(1, 6)
 
 
 def guessed_num():
