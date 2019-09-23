@@ -9,8 +9,7 @@ def char_counts(textfilename):
     """
     f = open(textfilename, "r")
     content = f.read()
-
-    # result = [content.count(i) for i in content]
+    f.close()
     return [content.count(i) for i in content]
 
 
