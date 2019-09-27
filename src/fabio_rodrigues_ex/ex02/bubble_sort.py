@@ -1,4 +1,11 @@
 def bubble_sort(tuple_data):
+    """
+    :param tuple_data:
+    - Write code for the bubble sort function;
+    - The function shall not modify the list or tuple passed to it.
+    :return:
+    - A new list with the data in sorted order.
+    """
     list_data = list(tuple_data)
     for pass_left in range(len(list_data) - 1, 0, -1):
         for i in range(pass_left):
