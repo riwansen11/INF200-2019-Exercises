@@ -1,6 +1,8 @@
 def letter_freq(txt):
-    """ Returns a dictionary = {(key : value)}, from the input string, with key = letters and
-    value = the number of occurrences of the letter in the given string.
+    """ Returns a dictionary = {(key : value)}, 
+    from the input string, with key = letters and
+    value = the number of occurrences of the letter 
+    in the given string.
     letters = [i for i in text]
     counter = [text.count(a) for a in text]
     return dict(zip(letters, counter))
