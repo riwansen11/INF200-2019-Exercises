@@ -11,8 +11,8 @@ def deck_loop():
 
 
 def deck_comp():
-    """ Returns the same list as deck_loop() using a list comprehension,
-    in a single line of code.
+    """ Returns the same list as deck_loop() using 
+    a list comprehension, in a single line of code.
     """
     return [(suit, val) for suit in SUITS for val in VALUES]
 
