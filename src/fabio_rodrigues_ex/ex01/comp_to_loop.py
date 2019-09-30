@@ -13,7 +13,6 @@ def squares_by_loop(n):
     return squares
 
 
-# test if squares_by_comp(n) and squares_by_loop(n) returns the same results for n = 2
 if __name__ == '__main__':
     if squares_by_comp(2) != squares_by_loop(2):
         print('ERROR!')
