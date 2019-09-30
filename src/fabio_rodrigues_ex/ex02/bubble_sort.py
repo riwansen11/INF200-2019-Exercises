@@ -6,12 +6,12 @@ def bubble_sort(tuple_data):
     :return:
     - A new list with the data in sorted order.
     """
-    list_data = list(tuple_data)
-    for pass_left in range(len(list_data) - 1, 0, -1):
+    list_d = list(tuple_data)
+    for pass_left in range(len(list_d) - 1, 0, -1):
         for i in range(pass_left):
-            if list_data[i] > list_data[i + 1]:
-                list_data[i], list_data[i + 1] = list_data[i + 1], list_data[i]
-    return list_data
+            if list_d[i] > list_d[i + 1]:
+                list_d[i], list_d[i + 1] = list_d[i + 1], list_d[i]
+    return list_d
 
 
 if __name__ == "__main__":
