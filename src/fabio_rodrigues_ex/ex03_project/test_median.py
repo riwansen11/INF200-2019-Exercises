@@ -17,3 +17,11 @@ def median(data):
     return (sdata[n // 2] if n % 2 == 1
 
             else 0.5 * (sdata[n // 2 - 1] + sdata[n // 2]))
+
+
+def test_median_one_element_list():
+    """A test that the median function returns the correct value for
+    a one-element list
+    """
+    one_element_list = [8]
+    assert median(one_element_list) == 8
