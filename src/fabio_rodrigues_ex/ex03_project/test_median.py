@@ -66,6 +66,13 @@ def test_empty_list_exception():
     """
     with pytest.raises(ValueError) as e:
         median([])
-        
+
     assert str(e.value) == 'Cannot empty list'
 
+
+def test_original_data_unchanged():
+    """A test that ensures that the median function leaves
+    the original data unchanged.
+    """
+    data = [5, 3, 4, 1, 2]
+    assert median(data) == 3 != data == [5, 3, 4, 1, 2]
