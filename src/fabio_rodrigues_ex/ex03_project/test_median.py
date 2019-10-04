@@ -14,6 +14,10 @@ def median(data):
     """
     sdata = sorted(data)
     n = len(sdata)
+
+    if not data:
+        raise ValueError('Cannot empty list')
+
     return (sdata[n // 2] if n % 2 == 1
 
             else 0.5 * (sdata[n // 2 - 1] + sdata[n // 2]))
@@ -54,3 +58,14 @@ def test_several(odd_list, even_list, list_ordered,
     assert median(list_ordered) == result
     assert median(list_rev_ordered) == result
     assert median(list_unordered) == result
+
+
+def test_empty_list_exception():
+    """A test checking that requesting the median of an empty list
+    raises a ValueError exception
+    """
+    with pytest.raises(ValueError) as e:
+        median([])
+        
+    assert str(e.value) == 'Cannot empty list'
+
