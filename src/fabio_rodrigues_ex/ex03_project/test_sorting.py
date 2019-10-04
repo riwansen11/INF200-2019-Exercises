@@ -24,13 +24,13 @@ def bubble_sort(tuple_data):
 def test_empty():
     """Test that the sorting function works for empty list"""
     empty_list = []
-    assert bubble_sort(empty_list) == empty_list
+    assert bubble_sort(empty_list) == empty_list == []
 
 
 def test_single():
     """Test that the sorting function works for single-element list"""
     single_element_list = [1]
-    assert bubble_sort(single_element_list) == single_element_list
+    assert bubble_sort(single_element_list) == single_element_list == [1]
 
 
 def test_sorted_is_not_original():
@@ -47,7 +47,7 @@ def test_sorted_is_not_original():
     """
     data = [3, 2, 1]
     sorted_data = bubble_sort(data)
-    assert sorted_data != data
+    assert sorted_data == [1, 2, 3] != data == [3, 2, 1]
 
 
 def test_original_unchanged():
@@ -63,21 +63,21 @@ def test_original_unchanged():
     """
     data = [3, 2, 1]
     sorted_data = bubble_sort(data)
-    assert data == [3, 2, 1] != sorted_data
+    assert data == [3, 2, 1] != sorted_data == [1, 2, 3]
 
 
 def test_sort_sorted():
     """Test that sorting works on sorted data."""
     data = [3, 2, 1]
     sorted_data = bubble_sort(data)
-    assert sorted_data == bubble_sort(sorted_data) != data
+    assert sorted_data == bubble_sort(sorted_data) != data == [3, 2, 1]
 
 
 def test_sort_reversed():
     """Test that sorting works on reverse-sorted data."""
     data = [3, 2, 1]
     sorted_data = bubble_sort(data)
-    assert bubble_sort(sorted_data[::-1]) == sorted_data
+    assert bubble_sort(sorted_data[::-1]) == sorted_data != data
 
 
 def test_sort_all_equal():
@@ -95,11 +95,11 @@ def test_sorting():
     ensure that they are sorted correctly. These could be lists of
     numbers of different length or lists of strings.
     """
-    data = (
-        (10, 1, 5),
-        (1, 2, 5, 10, 6, 13, 9),
-        (3, 1)
-    )
+    data = [
+        [10, 1, 5],
+        [1, 2, 5, 10, 6, 13, 9],
+        [3, 1]
+    ]
     sorted_data = [bubble_sort(i) for i in data]
 
     for a in range(len(data)):
