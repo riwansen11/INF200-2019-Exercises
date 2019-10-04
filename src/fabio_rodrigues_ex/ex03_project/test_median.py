@@ -53,11 +53,9 @@ def test_several(odd_list, even_list, list_ordered,
     - List with reverse-ordered
     - List with unordered elements
     """
-    assert median(odd_list) == result
-    assert median(even_list) == result
-    assert median(list_ordered) == result
-    assert median(list_rev_ordered) == result
-    assert median(list_unordered) == result
+    assert median(odd_list) == median(even_list) == median(
+        list_ordered) == median(list_rev_ordered) == median(
+        list_unordered) == result
 
 
 def test_empty_list_exception():
@@ -76,3 +74,12 @@ def test_original_data_unchanged():
     """
     data = [5, 3, 4, 1, 2]
     assert median(data) == 3 != data == [5, 3, 4, 1, 2]
+
+
+def test_median_works_for_tuples_and_lists():
+    """A test that ensures that the median function works for
+    tuples as well as lists
+    """
+    data_list = [5, 3, 4, 1, 2]
+    data_tuples = (5, 3, 4, 1, 2)
+    assert median(data_list) == median(data_tuples) == 3
