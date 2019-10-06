@@ -1,4 +1,4 @@
-INF200 Exercises:
+INF200 - Høst2019 Exercises:
 =================
 
 Fabio Rodrigues Pereira:
