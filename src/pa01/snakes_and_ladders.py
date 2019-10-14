@@ -4,7 +4,7 @@ import numpy as np
 
 
 __author__ = "Fábio Rodrigues Pereira and Rabin Senchuri"
-__email__ = "faro@nmbu.no and rabin@nmbu.no"
+__email__ = "faro@nmbu.no and rase@nmbu.no"
 
 
 def single_game(num_players):
@@ -46,6 +46,10 @@ def single_game(num_players):
 
 
 def chutes_and_ladders():
+    """
+    Dictionary with the snakes and ladders
+    :return: The square where the player goes once at the snake or ladder
+    """
     return {
         1: 40, 8: 10, 36: 52, 43: 62, 49: 79, 65: 82, 68: 85,
         24: 5, 33: 3, 42: 30, 56: 37, 64: 27, 74: 12, 87: 70
@@ -54,6 +58,11 @@ def chutes_and_ladders():
 
 # noinspection PyUnusedLocal
 def create_players(num_players):
+    """
+    Function to create a list with score and moves of each player
+    :param num_players: Number of players in the game
+    :return: score and moves of each player
+    """
     return [[0, 0] for i in range(num_players)]
 
 
@@ -83,13 +92,15 @@ def multi_game_experiment(num_games, num_players, seed):
 
 
 if __name__ == '__main__':
-    num_games = 100
-    num_players = 4
+    games_num = 100
+    players_num = 4
     arbitrary_seed = 123456
-    result = multi_game_experiment(num_games, num_players, arbitrary_seed)
+    result = multi_game_experiment(games_num, players_num,
+                                   arbitrary_seed)
 
-    print('Shortest game: {:3d} moves'.format(min(result)))
-    print('Median game  : {:5.1f} moves'.format(np.median(result)))
-    print('Longest game : {:3d} moves'.format(max(result)))
-    print('Mean of game : {:5.1f}moves'.format(np.mean(result)))
-    print('Standard deviation of game : {:5.1f}moves'.format(np.std(result)))
+    print('Shortest game: {:3d}'.format(min(result)))
+    print('Longest game: {:3d}'.format(max(result)))
+    print('Median game: {:5.2f}'.format(np.median(result)))
+    print('Mean of game: {:5.2f}'.format(np.mean(result)))
+    print('Standard deviation of game: {:5.2f}'.format(np.std(
+        result)))
